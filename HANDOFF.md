@@ -15,11 +15,7 @@ This site should be owned and operated through GRMR Education-controlled account
 - Create a Vercel account or team using `education@grmruf.org`.
 - Import the new `grmreducation` GitHub repository.
 - Set the production branch to `main`.
-- Add required environment variables:
-  - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-  - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
-  - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-- Redeploy after environment variables are set.
+- No environment variables are required for the current site.
 
 ## Domain
 
@@ -28,12 +24,10 @@ This site should be owned and operated through GRMR Education-controlled account
 - In Squarespace DNS, point the domain records to Vercel using the values Vercel provides.
 - Make one version canonical, preferably `grmreducation.org`.
 
-## EmailJS
+## Contact Form
 
-- The FAQ contact form uses EmailJS.
-- EmailJS should be owned by `education@grmruf.org`.
-- The EmailJS service/template should send messages to `education@grmruf.org`.
-- Keep the public EmailJS key in Vercel environment variables, not hard-coded in the repository.
+- The FAQ contact form opens a pre-filled email to `education@grmruf.org`.
+- No third-party contact form service is required.
 
 ## Airtable
 

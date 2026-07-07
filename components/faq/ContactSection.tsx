@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Send, CheckCircle } from 'lucide-react'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
-import emailjs from '@emailjs/browser'
 
 const ContactSection = () => {
     const [formState, setFormState] = useState({
@@ -15,7 +14,6 @@ const ContactSection = () => {
         message: ''
     })
 
-    const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -23,39 +21,26 @@ const ContactSection = () => {
         setFormState((prev) => ({ ...prev, [name]: value }))
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setIsSubmitting(true)
 
-        try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-                {
-                    name: formState.name,
-                    email: formState.email,
-                    subject: formState.subject,
-                    message: formState.message,
-                },
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            )
+        const subject = encodeURIComponent(`GRMR Website Question: ${formState.subject}`)
+        const body = encodeURIComponent(
+            `Name: ${formState.name}\nEmail: ${formState.email}\nSubject: ${formState.subject}\n\n${formState.message}`
+        )
 
-            setIsSubmitting(false)
-            setIsSubmitted(true)
-            setFormState({
-                name: '',
-                email: '',
-                subject: 'general',
-                message: ''
-            })
+        window.location.href = `mailto:education@grmruf.org?subject=${subject}&body=${body}`
+        setIsSubmitted(true)
+        setFormState({
+            name: '',
+            email: '',
+            subject: 'general',
+            message: ''
+        })
 
-            setTimeout(() => {
-                setIsSubmitted(false)
-            }, 5000)
-        } catch (error) {
-            console.error('Email send error:', error)
-            setIsSubmitting(false)
-        }
+        setTimeout(() => {
+            setIsSubmitted(false)
+        }, 5000)
     }
 
     return (
@@ -148,20 +133,10 @@ const ContactSection = () => {
                             <div className="flex justify-center pt-2">
                                 <Button
                                     type="submit"
-                                    disabled={isSubmitting}
-                                    className="bg-[#f3e8ff] text-[#86198f] hover:bg-[#86198f] hover:text-white rounded-full px-8 py-6 font-semibold text-lg flex items-center gap-2 shadow-md transition-colors duration-300 disabled:opacity-70"
+                                    className="bg-[#f3e8ff] text-[#86198f] hover:bg-[#86198f] hover:text-white rounded-full px-8 py-6 font-semibold text-lg flex items-center gap-2 shadow-md transition-colors duration-300"
                                 >
-                                    {isSubmitting ? (
-                                        <>
-                                            <div className="h-5 w-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-                                            Sending...
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Send className="h-5 w-5" />
-                                            Submit Question
-                                        </>
-                                    )}
+                                    <Send className="h-5 w-5" />
+                                    Email Question
                                 </Button>
                             </div>
                         </form>
