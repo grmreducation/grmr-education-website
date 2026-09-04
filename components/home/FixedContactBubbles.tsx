@@ -19,7 +19,7 @@ const contactLinks = [
   },
   {
     label: 'Discord',
-    href: 'https://discord.gg/db4dJS7WX3',
+    href: 'https://discord.gg/AWVCdW7Gja',
     icon: FaDiscord,
   },
 ]
