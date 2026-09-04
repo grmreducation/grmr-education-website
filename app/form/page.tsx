@@ -9,14 +9,14 @@ const FormPage = () => {
                 <div className="text-center mb-8">
                     <h1 className="text-4xl font-bold text-primary mb-2">Feedback Form</h1>
                     <p className="text-muted-foreground text-lg">
-                        Please use the weekly or monthly form below for your tutoring feedback.
+                        Please use the weekly or monthly form below for your tutoring feedback. You must fill out the Weekly Feedback Form every tutoring week, regardless if you've held a lesson!
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
                     <div className="min-w-0">
                         <h2 className="mb-4 text-center text-2xl font-semibold text-primary">Weekly Feedback Form</h2>
                         <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSdyhSmXV1WWKJ5m41zQ0lRh683Fny6zW73H-GnerGxTUKObrQ/viewform?embedded=true"
+                            src="https://forms.gle/2r5utRbtVkvxVx5X9"
                             width="100%"
                             height="900"
                             className="border-0 w-full rounded-xl"
@@ -28,9 +28,9 @@ const FormPage = () => {
                         </iframe>
                     </div>
                     <div className="min-w-0">
-                        <h2 className="mb-4 text-center text-2xl font-semibold text-primary">Monthly Feedback Form</h2>
+                        <h2 className="mb-4 text-center text-2xl font-semibold text-primary">Monthly Progress Form</h2>
                         <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSezFywib_nwKDzOt_XrQ4PWTSq7IoHeLKhHP8lrTBR-sftgnA/viewform?embedded=true"
+                            src="https://forms.gle/b8iAoRqmRUJRMteX8"
                             width="100%"
                             height="900"
                             className="border-0 w-full rounded-xl"
