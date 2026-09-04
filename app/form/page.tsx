@@ -16,7 +16,7 @@ const FormPage = () => {
                     <div className="min-w-0">
                         <h2 className="mb-4 text-center text-2xl font-semibold text-primary">Weekly Feedback Form</h2>
                         <iframe
-                            src="https://forms.gle/2r5utRbtVkvxVx5X9"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLScTtC1UeVgpHrXi6X2HfgsakOeZF_u5H0wSYZdKLJv_8_s7lg/viewform?usp=header"
                             width="100%"
                             height="900"
                             className="border-0 w-full rounded-xl"
@@ -30,7 +30,7 @@ const FormPage = () => {
                     <div className="min-w-0">
                         <h2 className="mb-4 text-center text-2xl font-semibold text-primary">Monthly Progress Form</h2>
                         <iframe
-                            src="https://forms.gle/b8iAoRqmRUJRMteX8"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSerI07HthUQ38YzAIJbk96z2ieJ-_muwATFNRDccOOS7ELqew/viewform?usp=header"
                             width="100%"
                             height="900"
                             className="border-0 w-full rounded-xl"
