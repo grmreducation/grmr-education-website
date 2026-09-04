@@ -9,7 +9,7 @@ const FormPage = () => {
                 <div className="text-center mb-8">
                     <h1 className="text-4xl font-bold text-primary mb-2">Feedback Form</h1>
                     <p className="text-muted-foreground text-lg">
-                        Please use the weekly or monthly form below for your tutoring feedback. You must fill out the Weekly Feedback Form every tutoring week, regardless if you've held a lesson!
+                        Please use the weekly or monthly form below for your tutoring feedback. You must fill out the Weekly Feedback Form every tutoring week, regardless if you&apos;ve held a lesson!
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-8 xl:grid-cols-2">
